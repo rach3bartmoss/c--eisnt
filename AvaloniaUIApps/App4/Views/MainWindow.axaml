@@ -1,0 +1,56 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:getStartedApp.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="getStartedApp.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="getStartedApp">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    
+    <StackPanel Margin="0,10,10,10">
+        <Border Margin="5" CornerRadius="10" Background="LightBlue">
+            <TextBlock  Text="Astraloptecos"
+                        HorizontalAlignment="Center"
+                        Margin="20,0,0,0"
+                        FontSize="24"
+            />
+        </Border>
+        <TextBlock  Text="Nome: " Margin="10,0,0,0" FontWeight="Black" />
+        <TextBox Name="textboxName" Width="200" HorizontalAlignment="Left" Margin="10,0,0,10" />
+        
+        <TextBlock  Text="Prova Escrita: " Margin="10,0,0,0" FontWeight="Black" />
+        <TextBox Name="textboxNE" Width="200" HorizontalAlignment="Left" Margin="10,0,0,10" />
+
+        <TextBlock  Text="Prova Oral: " Margin="10,0,0,0" FontWeight="Black" />
+        <TextBox Name="textboxNO" Width="200" HorizontalAlignment="Left" Margin="10,0,0,10" />
+
+        <TextBlock  Text="Prova Fisica: " Margin="10,0,0,0" FontWeight="Black" />
+        <TextBox Name="textboxNF" Width="200" HorizontalAlignment="Left" Margin="10,0,0,30" />
+
+        <Grid   ShowGridLines="True" Margin="5"
+                ColumnDefinitions="150, 150, 150, 150, 150"
+                RowDefinitions="Auto, 30, Auto">
+                <Label Grid.Row="0" Grid.Column="0">Nome</Label>
+                <TextBlock Name="nomeGrid" Grid.Row="1" Grid.Column="0" />
+                
+                <Label Grid.Row="0" Grid.Column="1">Nota Prova Escrita</Label>
+                <TextBlock Name="provaEscritaGrid" Grid.Row="1" Grid.Column="1" />
+                
+                <Label Grid.Row="0" Grid.Column="2">Nota Prova Oral</Label>
+                <TextBlock Name="provaOralGrid" Grid.Row="1" Grid.Column="2" />
+                
+                <Label Grid.Row="0" Grid.Column="3">Nota Prova Fisica</Label>
+                <TextBlock Name="provaFisicaGrid" Grid.Row="1" Grid.Column="3" />
+        </Grid>
+        <Button Content="Click me" HorizontalAlignment ="Center" Click="Button_Click" />
+    </StackPanel>
+</Window>
